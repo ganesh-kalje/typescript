@@ -10,10 +10,10 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 var Person = /** @class */ (function () {
-    function Person(name, username) {
+    function Person(firstName, username) {
         this.username = username;
         this.age = 28;
-        this.name = name;
+        this.name = firstName;
     }
     Person.prototype.printAge = function () {
         this.setType("type");
@@ -40,3 +40,44 @@ var Ganesh = /** @class */ (function (_super) {
 }(Person));
 var ganesh = new Ganesh("Mahesh", "ganesh");
 console.log(ganesh); // {name : ganesh, username : ganesh}
+//Static method and properties
+var Helpers = /** @class */ (function () {
+    function Helpers() {
+        this.numberOfTall = 25;
+    }
+    Helpers.PI = 3.14;
+    return Helpers;
+}());
+alert(Helpers.PI);
+//abstract class
+var Project = /** @class */ (function () {
+    function Project() {
+    }
+    return Project;
+}());
+var nameTest = /** @class */ (function (_super) {
+    __extends(nameTest, _super);
+    function nameTest() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    nameTest.prototype.changeName = function () {
+    };
+    return nameTest;
+}(Project));
+//Singlto or private constructor readonly property
+var OnlyOne = /** @class */ (function () {
+    function OnlyOne(name) {
+        this.name = name;
+        this.testVar = "ganesh";
+    }
+    OnlyOne.getInstance = function () {
+        if (!OnlyOne.instance) {
+            OnlyOne.instance = new OnlyOne('The only one');
+        }
+        return OnlyOne.instance;
+    };
+    return OnlyOne;
+}());
+// let wrong = new OnlyOne('The only one'); cannot create
+var right = OnlyOne.getInstance();
+//right.testVar = "mahesh"; It will not work because testVar readonlyh property

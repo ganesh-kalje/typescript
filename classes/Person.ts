@@ -1,10 +1,10 @@
 class Person {
-    name: string;
+    public name : any;
     private age: number = 28;
     protected type : string;
 
-    constructor(name, public username : string) {
-        this.name = name;
+    constructor(firstName : string, public username : string) {
+        this.name = firstName;
     }
 
     printAge() {
@@ -21,10 +21,9 @@ class Person {
 const person = new Person("Ganesh", "ganesh");
 console.log(person); // {name : "Ganesh", "username" : "ganesh"}
 person.printAge();
+
 // person.setType("type"); It will not work out side
-class Ganesh extends Person {
-    name: string = "ganesh";
-}
+class Ganesh extends Person {name: string = "ganesh";}
 
 const ganesh = new Ganesh("Mahesh", "ganesh");
 console.log(ganesh); // {name : ganesh, username : ganesh}
