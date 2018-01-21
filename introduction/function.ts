@@ -4,7 +4,7 @@ function returnMyName() : string {
 	return myName;
 };
 
-function sayHello : void {
+function sayHello() : void {
 	console.log("Hello")
 }
 

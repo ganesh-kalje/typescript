@@ -1,8 +1,15 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 var circle_1 = require("./circle");
 var Circle = require("./circle");
-var rectangle_1 = require("./rectangle"); //We can use user defined name 'calc' here, for this we need to add 'export default'
+/**
+ * We can use user defined name 'calc' here, for this we need to add 'export default'
+ */
+var rectangle_1 = require("./rectangle");
+/**
+ * Angular style import, absulte path default find in node_modules
+ */
+//import {comopnent} from "@angular/core"; 
 /**
  * Core javascript not support any kind of file load.
  * ES6 is have feature to load file load but all browser is  not support ES6
@@ -13,4 +20,19 @@ var rectangle_1 = require("./rectangle"); //We can use user defined name 'calc' 
  */
 console.log(circle_1.PI);
 console.log(Circle.calculateCircumference(1));
-console.log(rectangle_1["default"]);
+console.log(rectangle_1.default(25, 25));
+/**
+ * Namespace and module
+ * Namespace
+ * 1) Orgnize application with JS object
+ * 2) Can be split up over multiple files
+ * 3) No module Loader Required
+ * 4) Depenanci get difficult to manage in bigger Application. We dont know wchich file have wchich module
+ *
+ *
+ * Modules
+ * 1) Orgnize our application with real module
+ * 2) Can be split up over multiple files
+ * 3) Requie module loader
+ * 4) Explicit dependency Declaration
+ */ 

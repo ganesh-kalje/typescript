@@ -1,6 +1,6 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 function calculateRectangle(width, length) {
     return width * length;
 }
-exports["default"] = calculateRectangle;
+exports.default = calculateRectangle;

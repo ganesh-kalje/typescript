@@ -1,3 +1,4 @@
+"use strict";
 var myName = "MyName";
 var myAge = 25;
 var hasHobbies = true;
